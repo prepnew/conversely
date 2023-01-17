@@ -47,20 +47,17 @@ class LineHighlighterState extends State<LineHighlighter> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ScrollablePositionedList.builder(
-          itemCount: lines.length,
-          itemBuilder: (context, index) => LineW(
-            doHighlight: index == currentLineSpoken,
-            text: lines[index].trim(),
-          ),
-          itemScrollController: itemScrollController,
-          itemPositionsListener: itemPositionsListener,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ScrollablePositionedList.builder(
+        itemCount: lines.length,
+        itemBuilder: (context, index) => LineW(
+          doHighlight: index == currentLineSpoken,
+          text: lines[index].trim(),
         ),
-      )),
+        itemScrollController: itemScrollController,
+        itemPositionsListener: itemPositionsListener,
+      ),
     );
   }
 
