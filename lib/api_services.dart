@@ -26,7 +26,7 @@ class ApiServices {
           "presence_penalty": 0.0,
           "stop": [" Human:", "AI"]
         }));
-    print(res.statusCode);
+   
 
     if (res.statusCode == 200) {
       var data = jsonDecode(res.body.toString());
